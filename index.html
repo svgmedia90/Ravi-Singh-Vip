@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravi Singh™ | Official VIP Channel</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050505;
+overflow:hidden;
+color:#fff;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+/* Background Effects */
+
+.bg{
+position:absolute;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:-2;
+}
+
+.bg::before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+background:linear-gradient(45deg,#00ff88,#00c3ff);
+border-radius:50%;
+filter:blur(180px);
+top:-150px;
+left:-150px;
+opacity:.35;
+}
+
+.bg::after{
+content:"";
+position:absolute;
+width:450px;
+height:450px;
+background:linear-gradient(45deg,#ffb300,#ff6b00);
+border-radius:50%;
+filter:blur(180px);
+bottom:-150px;
+right:-150px;
+opacity:.3;
+}
+
+/* Card */
+
+.container{
+width:90%;
+max-width:480px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:30px;
+padding:40px 30px;
+text-align:center;
+box-shadow:
+0 0 40px rgba(0,255,136,.15),
+0 0 100px rgba(0,195,255,.08);
+}
+
+.logo{
+width:110px;
+height:110px;
+object-fit:contain;
+border-radius:50%;
+padding:8px;
+background:rgba(255,255,255,.05);
+border:2px solid rgba(255,255,255,.15);
+margin-bottom:20px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 18px;
+border-radius:50px;
+background:rgba(0,255,136,.12);
+border:1px solid rgba(0,255,136,.3);
+color:#00ff88;
+font-size:13px;
+font-weight:600;
+margin-bottom:18px;
+}
+
+h1{
+font-size:36px;
+font-weight:800;
+line-height:1.2;
+margin-bottom:12px;
+}
+
+h1 span{
+background:linear-gradient(90deg,#00ff88,#00c3ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.desc{
+color:#cfcfcf;
+font-size:15px;
+line-height:1.7;
+margin-bottom:28px;
+}
+
+.stats{
+display:flex;
+justify-content:space-between;
+gap:10px;
+margin-bottom:30px;
+}
+
+.stat{
+flex:1;
+background:rgba(255,255,255,.04);
+padding:14px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.stat h3{
+font-size:20px;
+font-weight:700;
+}
+
+.stat p{
+font-size:12px;
+color:#bdbdbd;
+margin-top:4px;
+}
+
+.timer-box{
+margin-bottom:25px;
+padding:18px;
+background:rgba(255,255,255,.04);
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.timer-text{
+font-size:13px;
+color:#aaa;
+margin-bottom:8px;
+}
+
+#timer{
+font-size:34px;
+font-weight:800;
+color:#ffb300;
+}
+
+.btn{
+display:block;
+text-decoration:none;
+padding:18px;
+border-radius:18px;
+font-size:17px;
+font-weight:700;
+color:#000;
+background:linear-gradient(90deg,#00ff88,#00c3ff);
+transition:.3s;
+box-shadow:0 10px 40px rgba(0,255,136,.4);
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.footer{
+margin-top:20px;
+font-size:12px;
+color:#8c8c8c;
+}
+
+@media(max-width:500px){
+
+h1{
+font-size:30px;
+}
+
+#timer{
+font-size:28px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="container">
+
+<img src="logo.png" class="logo" alt="Logo">
+
+<div class="badge">
+🔥 VIP Cricket Predictions
+</div>
+
+<h1>Ravi Singh <span>™</span></h1>
+
+<p class="desc">
+India's Premium Cricket Prediction Community.<br>
+Accurate Match Analysis • Expert Insights • VIP Access
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<h3>98%</h3>
+<p>Win Rate</p>
+</div>
+
+<div class="stat">
+<h3>50K+</h3>
+<p>Members</p>
+</div>
+
+<div class="stat">
+<h3>24×7</h3>
+<p>Support</p>
+</div>
+
+</div>
+
+<div class="timer-box">
+<div class="timer-text">
+VIP JOINING ENDS IN
+</div>
+<div id="timer">00:30</div>
+</div>
+
+<a href="https://t.me/+xC44uUsBbI0wMjE1" class="btn">
+Join Official Telegram
+</a>
+
+<div class="footer">
+© Ravi Singh™ Official Community
+</div>
+
+</div>
+
+<script>
+
+let time = 30;
+
+const timer = document.getElementById("timer");
+
+const countdown = setInterval(() => {
+
+let minutes = Math.floor(time / 60);
+let seconds = time % 60;
+
+timer.innerHTML =
+String(minutes).padStart(2,'0') + ":" +
+String(seconds).padStart(2,'0');
+
+time--;
+
+if(time < 0){
+clearInterval(countdown);
+timer.innerHTML = "00:00";
+}
+
+},1000);
+
+</script>
+
+</body>
+  </html>
